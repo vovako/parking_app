@@ -1,0 +1,38 @@
+@import "reset";
+@import "variables";
+@import "fonts";
+
+//Адаптивное свойство
+@mixin adaptiv-value($indentType, $pcSize, $mobSize, $type: 0) {
+	$addSize: $pcSize - $mobSize;
+	@if $type == 0 {
+		@media (max-width: #{$maxWidhtContainer + px}) {
+			#{$indentType}: calc(
+				#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth+px}) / #{$maxWidhtContainer - $minWidth})
+			);
+		}
+	} @else if $type == 1 {
+		@media (min-width: #{$maxWidhtContainer + px}) {
+			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth+px}) / #{$maxWidth - $minWidth}));
+		}
+	} @else if $type == 2 {
+		#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - #{$minWidth+px}) / #{$maxWidth - $minWidth}));
+	}
+}
+
+.container {
+	max-width: $maxWidhtContainer + 30 * 2;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+
+//===========================================================
+
+@import "app";
+
+//===========================================================
+
+.dn {
+	display: none;
+}
