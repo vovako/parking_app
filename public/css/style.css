@@ -39,6 +39,45 @@ textarea, input {
   -webkit-tap-highlight-color: transparent;
 }
 
+:root {
+  --main: #4D39DC;
+}
+
+@font-face {
+  font-family: "SF";
+  src: local("San Francisco(SF UI) Display Regular"), local("San-Francisco(SF-UI)-Display-Regular"), url("../fonts/SFUIDisplay-Regular.woff2") format("woff2"), url("../fonts/SFUIDisplay-Regular.woff") format("woff"), url("../fonts/SFUIDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF";
+  src: local("San Francisco(SF UI) Display Medium"), local("San-Francisco(SF-UI)-Display-Medium"), url("../fonts/SFUIDisplay-Medium.woff2") format("woff2"), url("../fonts/SFUIDisplay-Medium.woff") format("woff"), url("../fonts/SFUIDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@layer components {
+  .btn {
+    border-radius: 8px;
+    font-size: 12px;
+    border: 0;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #5457db 0%, #4823dd 100%);
+  }
+}
+@layer variations {
+  .btn-ghost {
+    border-radius: 8px;
+    font-size: 12px;
+    border: 1px solid #5457DB;
+    color: var(--main);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+  }
+}
+* {
+  font-family: "SF";
+}
+
 .container {
   max-width: 1260;
   padding: 0 30px;
@@ -53,6 +92,7 @@ textarea, input {
 
 .app-body {
   background-color: darkgoldenrod;
+  position: relative;
   flex: 1;
 }
 .app-body__map {
@@ -61,6 +101,85 @@ textarea, input {
 }
 .app-body__map .leaflet-bottom.leaflet-right .dg-attribution__copyright {
   display: none !important;
+}
+.app-body__location {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  bottom: 192px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.place-info {
+  background-color: #fcfcfd;
+  position: absolute;
+  bottom: 32px;
+  left: 20px;
+  right: 20px;
+  border-radius: 12px;
+  padding: 12px 10px;
+  font-size: 14px;
+  box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.25);
+}
+.place-info__info {
+  display: flex;
+  gap: 7px;
+}
+.place-info__image img {
+  background-color: #d9d9d9;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}
+.place-info__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.place-info__title {
+  color: var(--main);
+  font-weight: 500;
+}
+.place-info__price {
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 12px;
+  margin-left: 4px;
+}
+.place-info__address img {
+  height: 1em;
+}
+.place-info__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.place-info__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.place-info__arend-btn {
+  flex: 1;
+  padding: 11px;
+}
+.place-info__build-route-btn {
+  width: 35px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+}
+.place-info__build-route-btn img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .app-search {
@@ -77,7 +196,7 @@ textarea, input {
   height: 1em;
 }
 .app-search input {
-  background: #FCFCFD;
+  background: #fcfcfd;
   font-size: 16px;
   padding: 10px;
   padding-left: 39px;
@@ -98,6 +217,10 @@ textarea, input {
 .app-nav {
   height: 67px;
   display: grid;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;

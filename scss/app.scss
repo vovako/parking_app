@@ -6,6 +6,7 @@
 
 .app-body {
 	background-color: darkgoldenrod;
+	position: relative;
 	flex: 1;
 	&__map {
 		width: 100%;
@@ -16,7 +17,107 @@
 			}
 		}
 	}
+	&__location {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		right: 20px;
+		bottom: 192px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
+.place-info {
+	background-color: #fcfcfd;
+	position: absolute;
+	bottom: 32px;
+	left: 20px;
+	right: 20px;
+	border-radius: 12px;
+	padding: 12px 10px;
+	font-size: 14px;
+	box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.25);
+	&__info {
+		display: flex;
+		gap: 7px;
+	}
+
+	&__image {
+		img {
+			background-color: #d9d9d9;
+			width: 70px;
+			height: 70px;
+			border-radius: 12px;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__header {
+	}
+
+	&__title {
+		color: var(--main);
+		font-weight: 500;
+	}
+
+	&__price {
+		font-weight: 500;
+		white-space: nowrap;
+		font-size: 12px;
+		margin-left: 4px;
+	}
+
+	&__address {
+		img {
+			height: 1em;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	&__distance {
+	}
+
+	&__capacity {
+	}
+
+	&__actions {
+		display: flex;
+		gap: 8px;
+		margin-top: 12px;
+	}
+
+	&__arend-btn {
+		flex: 1;
+		padding: 11px;
+	}
+
+	&__build-route-btn {
+		width: 35px;
+		aspect-ratio: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 7px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+
 .app-search {
 	position: fixed;
 	top: 53px;
@@ -32,7 +133,7 @@
 	}
 
 	input {
-		background: #FCFCFD;
+		background: #fcfcfd;
 		font-size: 16px;
 		padding: 10px;
 		padding-left: 39px;
@@ -51,6 +152,10 @@
 .app-nav {
 	height: 67px;
 	display: grid;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	grid-template-columns: repeat(3, 1fr);
 	justify-items: center;
 	align-items: center;

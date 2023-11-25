@@ -11,19 +11,17 @@ const apiOrigin = 'https://hack-zmark.p.tnnl.in';
 // 	.then(response => response.json())
 // 	.then(result => console.log(result))
 
-
-
 fetch(`${apiOrigin}/api/reservation/getParkings`, {
 	method: 'POST',
 	headers: {
+		'Content-Type': 'application/json',
 		Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkX3VzZXIiOjEsInBhc3MiOiIxMjM0NSIsInBob25lIjoiODk4NzE5MTEyNDAiLCJpc19pbnZhbGlkIjpmYWxzZX0sImV4cCI6MTcwMDk0MjExMSwiaWF0IjoxNzAwODU1NzExfQ.L9gJCfPlz5YPiDJe_dty-YzheBQrAweKwRPXW2dOr4w"
 	},
 	body: JSON.stringify({
-		"lat": 51.5074,
-		"long": 0.1278,
-		"range": 200
-	}),
-	redirect: 'follow'
+		"lat": 51.79269,
+		"long": 55.12639,
+		"range": 10000
+	})
 })
 	.then(res => res.json())
 	.then(json => {
