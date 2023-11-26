@@ -16,6 +16,12 @@
 				display: none !important;
 			}
 		}
+
+		.leaflet-marker-icon.leaflet-div-icon.leaflet-zoom-animated.leaflet-interactive {
+			border: 0;
+			background: transparent;
+			width: fit-content !important;
+		}
 	}
 	&__location {
 		width: 40px;
@@ -31,14 +37,19 @@
 }
 .place-info {
 	background-color: #fcfcfd;
-	position: absolute;
-	bottom: 32px;
+	position: fixed;
+	bottom: 80px;
 	left: 20px;
 	right: 20px;
 	border-radius: 12px;
 	padding: 12px 10px;
 	font-size: 14px;
 	box-shadow: 0px 4px 5px -3px rgba(0, 0, 0, 0.25);
+	display: none;
+	z-index: 10;
+	&.active {
+		display: block;
+	}
 	&__info {
 		display: flex;
 		gap: 7px;
@@ -114,6 +125,240 @@
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
+		}
+	}
+}
+
+.place-full-info {
+	position: fixed;
+	display: flex;
+	flex-direction: column-reverse;
+	z-index: 20;
+	bottom: 80px;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	transition: all 0.4s ease-in-out;
+	background-color: rgba(black, 0.8);
+
+	&.active {
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		height: auto;
+		width: auto;
+		opacity: 1;
+	}
+	&__content {
+		display: none;
+		&:not([data-content="info"]) {
+			.place-full-info__title {
+				text-align: center;
+			}
+		}
+		&.active {
+			display: block;
+		}
+	}
+	&__image {
+		width: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__body {
+		border-top-right-radius: 12px;
+		border-top-left-radius: 12px;
+		margin-top: -12px;
+		position: relative;
+		background-color: #fcfcfd;
+		padding: 33px 24px 30px 24px;
+		transition: all 400ms ease-in-out;
+	}
+	&__back-btn {
+		background-color: transparent;
+		border: 0;
+		position: absolute;
+		top: 10px;
+		left: 12px;
+	}
+
+	&__close-btn {
+		border: 0;
+		background-color: #eaeaea;
+		border-radius: 50%;
+		aspect-ratio: 1;
+		width: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 10px;
+		right: 12px;
+		img {
+			width: 10px;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		margin-bottom: 10px;
+	}
+
+	&__address {
+		font-size: 14px;
+	}
+
+	&__rating {
+	}
+
+	&__divider {
+		margin: 9px 0;
+		height: 2px;
+		width: 106%;
+		translate: -3% 0;
+		background-color: rgba(146, 144, 205, 0.5);
+	}
+
+	&__subtitle {
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 7px;
+		margin-top: 8px;
+	}
+
+	&__text {
+		font-size: 11px;
+		padding-left: 20px;
+		margin-bottom: 4px;
+	}
+
+	&__tag {
+		font-size: 11px;
+		background-color: #eaeaea;
+		border-radius: 8px;
+		padding: 2px 10px;
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 8px;
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 24px;
+	}
+
+	&__add-rating-btn {
+		aspect-ratio: 1;
+		height: 38px;
+		border-radius: 12px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__build-route-btn {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	&__arend-btn,
+	&__tomarkup-btn,
+	&__tosummary-btn,
+	&__to-pay-btn,
+	&__to-finish-btn,
+	&__share-btn,
+	&__to-main-btn {
+		margin-top: 12px;
+		width: 100%;
+	}
+
+	&__labels {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px 17px;
+		margin-top: 22px;
+		margin-bottom: 10px;
+	}
+
+	.place-full-info-label {
+		display: flex;
+		align-items: center;
+		gap: 3px;
+		&__color {
+			width: 17px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+
+			&.free {
+				border: 1px solid gray;
+			}
+			&.invalid {
+				background-color: #8487ef;
+			}
+			&.close {
+				background-color: #bfbfbf;
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	.place-full-info-markup {
+		&__grid {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 6px;
+		}
+
+		&__spot {
+			border: 1px solid #7e7e7e;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 2px;
+			font-weight: 500;
+		}
+
+		&__flow {
+			border-top: 4px dashed rgb(110, 110, 110);
+			border-bottom: 4px dashed rgb(110, 110, 110);
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			justify-items: center;
+			padding: 10px;
+			margin: 12px 8px;
+		}
+	}
+	&__pay-list {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.place-full-info-pay-item {
+		display: flex;
+		gap: 6px;
+		align-items: center;
+		&__image {
+			width: 25px;
+		}
+
+		&__text {
 		}
 	}
 }
