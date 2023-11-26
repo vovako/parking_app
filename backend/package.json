@@ -1,0 +1,29 @@
+{
+  "name": "mark_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "gulp build",
+    "doc": "docker compose up",
+    "server": "npm run build && node index.js"
+  },
+  "author": "Mark Zagumennikov",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "digest": "^0.0.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3",
+    "telegraf": "^4.12.2"
+  }
+}

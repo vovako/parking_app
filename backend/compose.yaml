@@ -1,0 +1,21 @@
+services:
+  server:
+    build: ./
+    container_name: DeadEnd
+    ports: 
+     - 3000:9000
+    restart: always
+    volumes:
+      - ./:/bot_constructor
+      - ../public:/public
+      - /bot_constructor/node_modules
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: postgres:14-alpine
+    restart: always
+    ports:
+      - 2000:5432
+    environment:
+      - POSTGRES_PASSWORD=Nk%jTWxMtP.1
