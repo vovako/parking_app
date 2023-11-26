@@ -15,15 +15,15 @@
 	<main class="app">
 		<div class="app-body">
 			<div class="app-body__map" id="map"></div>
-			<div class="place-info active">
+			<div class="place-info">
 				<div class="place-info__info">
-					<div class="place-info__image"><img src="" alt=""></div>
+					<div class="place-info__image"><img src="img/park-temp.png" alt=""></div>
 					<div class="place-info__body">
 						<div class="place-info__header">
 							<span class="place-info__title">Название парковки</span>
-							<span class="place-info__price">200 ₽/ч</span>
+							<span class="place-info__price">1300 ₽/ч</span>
 						</div>
-						<div class="place-info__address"><img src="img/geo-mark_2.svg" alt="">Адрес, улица, номер и тд</div>
+						<div class="place-info__address"><img src="img/geo-mark_2.svg" alt="">"ул. Лесная, дом 20"</div>
 						<div class="place-info__footer">
 							<div class="place-info__distance">500 м</div>
 							<div class="place-info__capacity">40 мест</div>
@@ -40,12 +40,12 @@
 					<button class="place-full-info__back-btn dn"><img src="img/back-btn.svg" alt=""></button>
 					<button class="place-full-info__close-btn"><img src="img/cross.svg" alt=""></button>
 					<div class="place-full-info__content active" data-content="info">
-						<div class="place-full-info__title">Парковка в Депо Москва</div>
+						<div class="place-full-info__title">Название парковки</div>
 						<div class="place-full-info__address">ул. Лесная, дом 20</div>
 						<div class="place-full-info__rating"></div>
 						<div class="place-full-info__divider"></div>
 						<div class="place-full-info__subtitle">Тарифы</div>
-						<div class="place-full-info__text">Бесплатно первые 20 минут; далее 200 ₽/час</div>
+						<div class="place-full-info__text">Бесплатно первые 20 минут; далее 1300 ₽/час</div>
 						<div class="place-full-info__subtitle">Часы работы</div>
 						<div class="place-full-info__text">Пн-вт: 10:00 - 20:00</div>
 						<div class="place-full-info__text">Ср-вс: 05:00 - 23:00</div>
@@ -62,21 +62,72 @@
 							<button class="place-full-info__build-route-btn btn-ghost"><img src="img/build-route_colored.svg"
 									alt="">Построить маршрут</button>
 						</div>
-						<button class="place-full-info__arend-btn btn">Забронировать 200 ₽/час</button>
+						<button class="place-full-info__arend-btn btn">Забронировать 1300 ₽/час</button>
 					</div>
 					<div class="place-full-info__content" data-content="datetime">
-						<div class="place-full-info__title">Парковка в Депо Москва</div>
+						<div class="place-full-info__title">Название парковки</div>
 						<div class="place-full-info__subtitle">Выберете интервал бронирования</div>
 						<div class="place-full-info__subtitle">от</div>
-						<input type="date">
-						<input type="time">
+						<input type="date" name="date-from">
+						<select name="time-from">
+							<option value="0">0:00</option>
+							<option value="1">1:00</option>
+							<option value="2">2:00</option>
+							<option value="3">3:00</option>
+							<option value="4">4:00</option>
+							<option value="5">5:00</option>
+							<option value="6">6:00</option>
+							<option value="7">7:00</option>
+							<option value="8">8:00</option>
+							<option value="9">9:00</option>
+							<option value="10">10:00</option>
+							<option value="11">11:00</option>
+							<option value="12">12:00</option>
+							<option value="13">13:00</option>
+							<option value="14">14:00</option>
+							<option value="15">15:00</option>
+							<option value="16">16:00</option>
+							<option value="17">17:00</option>
+							<option value="18">18:00</option>
+							<option value="19">19:00</option>
+							<option value="20">20:00</option>
+							<option value="21">21:00</option>
+							<option value="22">22:00</option>
+							<option value="23">23:00</option>
+						</select>
 						<div class="place-full-info__subtitle">до</div>
-						<input type="date">
-						<input type="time">
+						<input type="date" name="date-to">
+						<select name="time-to">
+							<option value="0">0:00</option>
+							<option value="1">1:00</option>
+							<option value="2">2:00</option>
+							<option value="3">3:00</option>
+							<option value="4">4:00</option>
+							<option value="5">5:00</option>
+							<option value="6">6:00</option>
+							<option value="7">7:00</option>
+							<option value="8">8:00</option>
+							<option value="9">9:00</option>
+							<option value="10">10:00</option>
+							<option value="11">11:00</option>
+							<option value="12">12:00</option>
+							<option value="13">13:00</option>
+							<option value="14">14:00</option>
+							<option value="15">15:00</option>
+							<option value="16">16:00</option>
+							<option value="17">17:00</option>
+							<option value="18">18:00</option>
+							<option value="19">19:00</option>
+							<option value="20">20:00</option>
+							<option value="21">21:00</option>
+							<option value="22">22:00</option>
+							<option value="23">23:00</option>
+						</select>
+
 						<button class="place-full-info__tomarkup-btn btn">Выбрать место</button>
 					</div>
 					<div class="place-full-info__content" data-content="markup">
-						<div class="place-full-info__title">Парковка в Депо Москва</div>
+						<div class="place-full-info__title">Название парковки</div>
 						<div class="place-full-info__labels">
 							<div class="place-full-info-label">
 								<div class="place-full-info-label__color close"></div>
@@ -155,21 +206,23 @@
 						<button class="place-full-info__tosummary-btn btn">Далее</button>
 					</div>
 					<div class="place-full-info__content" data-content="summary">
-						<div class="place-full-info__title">Парковка в Депо Москва</div>
-						<div class="place-full-info__subtitle">Место: <span>10</span></div>
+						<div class="place-full-info__title">Название парковки</div>
+						<div class="place-full-info__subtitle">Место: <span class="choced-spot"></span></div>
 						<div class="place-full-info__subtitle">Время бронирования</div>
 						<div class="place-full-info-symmary-time">
 							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span>Вс, 26 ноября, 6:00</span></div>
+							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
+									class="datetime-from">Вс, 26 ноября, 6:00</span></div>
 							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span>Вс, 26 ноября, 8:00</span></div>
+							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
+									class="datetime-to">Вс, 26 ноября, 8:00</span></div>
 						</div>
 						<button class="place-full-info__to-pay-btn btn">Перейти к оплате</button>
 					</div>
 					<div class="place-full-info__content" data-content="pay">
-						<div class="place-full-info__title">Парковка в Депо Москва</div>
-						<div class="place-full-info__subtitle">Время на парковке <span>2 часа</span></div>
-						<div class="place-full-info__subtitle">Итого к оплате: <span>400₽</span></div>
+						<div class="place-full-info__title">Название парковки</div>
+						<div class="place-full-info__subtitle">Время на парковке <span class="count-hours-arend">2</span>часов</div>
+						<div class="place-full-info__subtitle">Итого к оплате: <span>3900₽</span></div>
 						<div class="place-full-info__subtitle">Способы оплаты</div>
 						<div class="place-full-info__pay-list">
 							<div class="place-full-info-pay-item">
@@ -185,16 +238,16 @@
 					</div>
 					<div class="place-full-info__content" data-content="finish">
 						<div class="place-full-info__title">Успешное бронирование</div>
-						<div class="place-full-info__text">Парковка в Депо Москва</div>
+						<div class="place-full-info__text">Название парковки</div>
 						<div class="place-full-info__address place-full-info__text">ул. Лесная, дом 20</div>
-						<div class="place-full-info__text">Парковочное место: <span>10</span></div>
+						<div class="place-full-info__text">Парковочное место: <span class="choced-spot"></span></div>
 						<div class="place-full-info-symmary-time">
 							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span>Вс, 26
-									ноября, 6:00</span></div>
+							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
+									class="datetime-from">Вс, 26 ноября, 6:00</span></div>
 							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span>Вс, 26 ноября,
-									8:00</span></div>
+							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
+									class="datetime-to">Вс, 26 ноября, 8:00</span></div>
 						</div>
 						<button class="place-full-info__share-btn btn">Поделиться</button>
 						<button class="place-full-info__to-main-btn btn-ghost">На Главную</button>
@@ -214,6 +267,133 @@
 			<img src="img/search.svg" alt="">
 			<input type="search" name="search" placeholder="Найти по адресу или названию">
 		</search>
+		<div class="rating">
+			<div class="rating__header">
+				<button class="rating__back-btn">Назад</button>
+				<div class="rating__title">Отзывы</div>
+				<div></div>
+			</div>
+			<div class="rating__wrapper">
+				<div class="rating__content" data-content="read">
+					<div class="rating__sort-list">
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-all" name="sort-type">
+							<label for="rataing-all">4,0 (17 оценок)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+							</div>
+						</div>
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-5" name="sort-type">
+							<label for="rataing-5">Супер (3)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+							</div>
+						</div>
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-4" name="sort-type">
+							<label for="rataing-4">Хорошо (8)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+							</div>
+						</div>
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-3" name="sort-type">
+							<label for="rataing-3">Приемлемо (4)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+							</div>
+						</div>
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-2" name="sort-type">
+							<label for="rataing-2">Можно лучше (1)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+							</div>
+						</div>
+						<div class="rating-sort-item">
+							<input type="radio" id="rataing-1" name="sort-type">
+							<label for="rataing-1">Ужасно (1)</label>
+							<div class="rating-sort-item__stars-bar">
+								<img src="img/star.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+								<img src="img/star-empty.svg" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="rating-date-filter">
+						<input type="checkbox" id="date-filter">
+						<label for="date-filter" date-new-first-text="Cначала новые" date-old-first-text="Cначала старые">
+							<img src="img/sort.svg" alt="">
+						</label>
+					</div>
+					<div class="rating__list">
+						<div class="rating-item">
+							<div class="rating-item__header">
+								<div class="rating-item__name">Елена</div>
+								<div class="rating-item__date">25 ноября 2023</div>
+								<div class="rating-sort-item__stars-bar">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+								</div>
+							</div>
+							<div class="rating-item__text">Хорошая парковка, много мест. Есть камеры наблюдения.</div>
+						</div>
+						<div class="rating-item">
+							<div class="rating-item__header">
+								<div class="rating-item__name">Максим</div>
+								<div class="rating-item__date">19 ноября 2023</div>
+								<div class="rating-sort-item__stars-bar">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+									<img src="img/star.svg" alt="">
+								</div>
+							</div>
+							<div class="rating-item__text">Хорошая парковка, нормальная стоимость. Есть места даже в выходные.</div>
+						</div>
+					</div>
+				</div>
+				<div class="rating__content" data-content="write">
+					<textarea name="feedback-text" placeholder="Напишите свой отзыв"></textarea>
+					<div class="rating__text">Оцените парковку</div>
+					<div class="rating__feedback-bar">
+						<button class="rating__feedback-btn" data-feedback="1"><img src="img/star.svg" alt=""></button>
+						<button class="rating__feedback-btn" data-feedback="2"><img src="img/star.svg" alt=""></button>
+						<button class="rating__feedback-btn" data-feedback="3"><img src="img/star.svg" alt=""></button>
+						<button class="rating__feedback-btn" data-feedback="4"><img src="img/star.svg" alt=""></button>
+						<button class="rating__feedback-btn" data-feedback="5"><img src="img/star.svg" alt=""></button>
+					</div>
+				</div>
+			</div>
+			<button class="rating__submit-btn btn">Оставить отзыв</button>
+		</div>
 	</main>
 </body>
 

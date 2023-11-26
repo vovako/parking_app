@@ -151,7 +151,6 @@
 .place-info__title {
   color: var(--main);
   font-weight: 500;
-  text-decoration: underline;
 }
 .place-info__price {
   font-weight: 500;
@@ -483,7 +482,6 @@
   padding-bottom: 40px;
   background-color: white;
   flex-direction: column;
-  z-index: 30;
 }
 .rating.active {
   display: flex;
@@ -521,10 +519,6 @@
 .rating__wrapper {
   flex: 1;
   display: flex;
-  transition: translate 0.3s ease-in-out;
-}
-.rating__wrapper.active {
-  translate: -100vw 0;
 }
 .rating__list {
   display: flex;
@@ -535,32 +529,6 @@
   width: calc(100% - 40px);
   margin: 0 auto;
   display: block;
-}
-.rating textarea {
-  border-radius: 20px;
-  border: var(--main) solid 1px;
-  color: gray;
-  padding: 10px;
-  resize: none;
-  width: 100%;
-  height: 50vh;
-}
-.rating textarea::-moz-placeholder {
-  color: #BDBDBD;
-}
-.rating textarea::placeholder {
-  color: #BDBDBD;
-}
-.rating__text {
-  margin: 10px 0;
-}
-.rating__feedback-bar button {
-  background-color: transparent;
-  border: 0;
-}
-.rating__feedback-bar button img {
-  width: 40px;
-  pointer-events: none;
 }
 
 .rating-sort-item {

@@ -2,7 +2,7 @@ const apiOrigin = 'https://hack-zmark.p.tnnl.in';
 const jwtAccess = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkX3VzZXIiOjEsInBhc3MiOiIxMjM0NSIsInBob25lIjoiODk4NzE5MTEyNDAiLCJpc19pbnZhbGlkIjpmYWxzZSwidGVsZWdyYW0iOjAsInJvbGUiOiJ1c2VyIn0sImV4cCI6MTcwMTAyODY3NiwiaWF0IjoxNzAwOTQyMjc2fQ.zU_Qkp4M2OafM9u5LdVINwwuyzJIlBLEbQfiwAGBCn8'
 
 function serverQuery(link, json) {
-	return new Promise(function (resolve, reject) {
+	return new Promise(function(resolve, reject) {
 		fetch(link, {
 			method: 'POST',
 			headers: {
@@ -37,7 +37,7 @@ const myPos = []
 DG.then(function () {
 	map = DG.map('map', {
 		fullscreenControl: false,
-		zoomControl: false,
+		zoomControl: false
 	});
 
 	getMyLocation(map)
@@ -54,7 +54,7 @@ DG.then(function () {
 				.then(json => {
 					const data = json.data
 					store.parkingData = data
-					parkinfo.classList.add('active')
+					console.log(json)
 
 					const group = DG.featureGroup(data.map(i => {
 						const label = i.cheapSpot !== null ? `${i.cheapSpot} ₽/ч` : '';
@@ -67,7 +67,7 @@ DG.then(function () {
 					group.addTo(map)
 					group.on('click', (e) => {
 						map.setView([e.latlng.lat, e.latlng.lng])
-						const parkData = store.parkingData.filter(parks => parks.id_parking === store.parkId)
+						const parkData = store.parkingData.filter(parks => parks.id_parking === store.parkId)[0]
 						console.log(parkData);
 						showParkInfo()
 					})
@@ -81,7 +81,7 @@ DG.then(function () {
 
 function getMyLocation(map) {
 	return new Promise(function (resolve, reject) {
-		map.locate({ setView: true, zoom: 1 })
+		map.locate({ setView: true })
 			.on('locationfound', function (e) {
 				myPos[0] = location.latitude
 				myPos[1] = location.longitude
@@ -140,9 +140,7 @@ locationBtn.addEventListener('click', function () {
 	getMyLocation(map)
 })
 
-const parkinfo = document.querySelector('.place-info')
 const parkTitleEl = document.querySelector('.place-info__arend-btn')
-const parkTitle = document.querySelector('.place-info__title')
 const parkImageEl = document.querySelector('.place-full-info__image')
 const placeFullInfo = document.querySelector('.place-full-info')
 const parkCloseBtn = document.querySelector('.place-full-info__close-btn')
@@ -170,10 +168,6 @@ parkTitleEl.addEventListener('click', function () {
 	bodyInfo.style.justifyContent = null
 	bodyInfoContent.style.borderBottomRightRadius = null
 	bodyInfoContent.style.borderBottomLeftRadius = null
-})
-parkTitle.addEventListener('click', function() {
-	console.log(store.parkingData);
-	map.setView([store.parkingData[0].lat, store.parkingData[0].long])
 })
 parkCloseBtn.addEventListener('click', function () {
 	placeFullInfo.classList.remove('active')
@@ -277,30 +271,6 @@ function updateCountHoursArend(countHours) {
 		b.textContent = countHours
 	})
 }
-const ratingPage = document.querySelector('.rating')
-const addFeedbackBtn = document.querySelector('.rating__submit-btn')
-addFeedbackBtn.addEventListener('click', function () {
-	const wrapper = document.querySelector('.rating__wrapper')
-	if (wrapper.classList.contains('active')) {
-		ratingPage.classList.remove('active')
-		wrapper.classList.remove('active')
-	} else {
-		wrapper.classList.add('active')
-	}
-})
-const backFromFeedbackBtn = document.querySelector('.rating__back-btn')
-backFromFeedbackBtn.addEventListener('click', function () {
-	const wrapper = document.querySelector('.rating__wrapper')
-	if (wrapper.classList.contains('active')) {
-		wrapper.classList.remove('active')
-	} else {
-		ratingPage.classList.remove('active')
-	}
-})
-const openRatingPageBtn = document.querySelector('.place-full-info__add-rating-btn')
-openRatingPageBtn.addEventListener('click', function() {
-	ratingPage.classList.add('active')
-})
 
 document.addEventListener('click', function (evt) {
 	const target = evt.target
@@ -315,12 +285,6 @@ document.addEventListener('click', function (evt) {
 		updateChocedSpotNumber(store.spot)
 	} else if (target.hasAttribute('data-park-id')) {
 		store.parkId = target.dataset.parkId
-	} else if (target.classList.contains('rating__feedback-btn')) {
-		const rating = +target.dataset.feedback
-		const stars = document.querySelectorAll('.rating__feedback-btn')
-		stars.forEach((star, i) => {
-			star.firstElementChild.src = i < rating ? 'img/star.svg' : 'img/star-empty.svg'
-		})
 	}
 })
 
