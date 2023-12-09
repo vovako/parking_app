@@ -279,11 +279,16 @@ function updateCountHoursArend(countHours) {
 }
 const ratingPage = document.querySelector('.rating')
 const addFeedbackBtn = document.querySelector('.rating__submit-btn')
+const ratingNotice = document.querySelector('.app-notify')
 addFeedbackBtn.addEventListener('click', function () {
 	const wrapper = document.querySelector('.rating__wrapper')
 	if (wrapper.classList.contains('active')) {
 		ratingPage.classList.remove('active')
 		wrapper.classList.remove('active')
+		ratingNotice.classList.remove('active')
+		window.requestAnimationFrame(() => {
+			ratingNotice.classList.add('active')
+		})
 	} else {
 		wrapper.classList.add('active')
 	}
@@ -300,6 +305,21 @@ backFromFeedbackBtn.addEventListener('click', function () {
 const openRatingPageBtn = document.querySelector('.place-full-info__add-rating-btn')
 openRatingPageBtn.addEventListener('click', function() {
 	ratingPage.classList.add('active')
+})
+const toProfileBtn = document.querySelector('.to-profile-btn')
+const profilePage = document.querySelector('.profile-page')
+toProfileBtn.addEventListener('click', function() {
+	const activeBtn = document.querySelector('.app-nav__btn.active')
+	activeBtn.classList.remove('active')
+	toProfileBtn.classList.add('active')
+	profilePage.classList.add('active')
+})
+const toMapBtn = document.querySelector('.to-map-btn')
+toMapBtn.addEventListener('click', function () {
+	const activeBtn = document.querySelector('.app-nav__btn.active')
+	activeBtn.classList.remove('active')
+	toMapBtn.classList.add('active')
+	profilePage.classList.remove('active')
 })
 
 document.addEventListener('click', function (evt) {
