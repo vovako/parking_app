@@ -14,266 +14,283 @@
 <body>
 	<main class="app">
 		<div class="app-body">
-			<div class="app-body__map" id="map"></div>
-			<div class="place-info">
-				<div class="place-info__info">
-					<div class="place-info__image"><img src="img/park-temp.png" alt=""></div>
-					<div class="place-info__body">
-						<div class="place-info__header">
-							<span class="place-info__title">Название парковки</span>
-							<span class="place-info__price">1300 ₽/ч</span>
-						</div>
-						<div class="place-info__address"><img src="img/geo-mark_2.svg" alt="">"ул. Лесная, дом 20"</div>
-						<div class="place-info__footer">
-							<div class="place-info__distance">500 м</div>
-							<div class="place-info__capacity">40 мест</div>
+			<div class="app-map-page app-page">
+				<div class="app-body__map" id="map"></div>
+				<div class="place-info">
+					<div class="place-info__info">
+						<div class="place-info__image"><img src="img/park-temp.png" alt=""></div>
+						<div class="place-info__body">
+							<div class="place-info__header">
+								<span class="place-info__title">Название парковки</span>
+								<span class="place-info__price">1300 ₽/ч</span>
+							</div>
+							<div class="place-info__address"><img src="img/geo-mark_2.svg" alt="">"ул. Лесная, дом 20"</div>
+							<div class="place-info__footer">
+								<div class="place-info__distance">500 м</div>
+								<div class="place-info__capacity">40 мест</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="place-info__actions">
-					<button class="place-info__arend-btn btn-ghost">Забронировать</button>
-					<button class="place-info__build-route-btn btn"><img src="img/build-route.svg" alt=""></button>
-				</div>
-			</div>
-			<div class="place-full-info">
-				<div class="place-full-info__body">
-					<button class="place-full-info__back-btn dn"><img src="img/back-btn.svg" alt=""></button>
-					<button class="place-full-info__close-btn"><img src="img/cross.svg" alt=""></button>
-					<div class="place-full-info__content active" data-content="info">
-						<div class="place-full-info__title">Название парковки</div>
-						<div class="place-full-info__address">ул. Лесная, дом 20</div>
-						<div class="place-full-info__rating"></div>
-						<div class="place-full-info__divider"></div>
-						<div class="place-full-info__subtitle">Тарифы</div>
-						<div class="place-full-info__text">Бесплатно первые 20 минут; далее 1300 ₽/час</div>
-						<div class="place-full-info__subtitle">Часы работы</div>
-						<div class="place-full-info__text">Пн-вт: 10:00 - 20:00</div>
-						<div class="place-full-info__text">Ср-вс: 05:00 - 23:00</div>
-						<div class="place-full-info__subtitle">Количество парковочных мест всего: <span>40</span></div>
-						<div class="place-full-info__subtitle">Количество свободных мест: <span>10</span></div>
-						<div class="place-full-info__divider"></div>
-						<div class="place-full-info__subtitle">Особенности</div>
-						<div class="place-full-info__tag">Наземная</div>
-						<div class="place-full-info__tag">Видеонаблюдение</div>
-						<div class="place-full-info__tag">Охраняемая</div>
-						<div class="place-full-info__tag">Общедоступная</div>
-						<div class="place-full-info__actions">
-							<button class="place-full-info__add-rating-btn btn"><img src="img/add-rating.svg" alt=""></button>
-							<button class="place-full-info__build-route-btn btn-ghost"><img src="img/build-route_colored.svg"
-									alt="">Построить маршрут</button>
-						</div>
-						<button class="place-full-info__arend-btn btn">Забронировать 1300 ₽/час</button>
+					<div class="place-info__actions">
+						<button class="place-info__arend-btn btn-ghost">Забронировать</button>
+						<button class="place-info__build-route-btn btn"><img src="img/build-route.svg" alt=""></button>
 					</div>
-					<div class="place-full-info__content" data-content="datetime">
-						<div class="place-full-info__title">Название парковки</div>
-						<div class="place-full-info__subtitle">Выберете интервал бронирования</div>
-						<div class="place-full-info__subtitle">от</div>
-						<input type="date" name="date-from">
-						<select name="time-from">
-							<option value="0">0:00</option>
-							<option value="1">1:00</option>
-							<option value="2">2:00</option>
-							<option value="3">3:00</option>
-							<option value="4">4:00</option>
-							<option value="5">5:00</option>
-							<option value="6">6:00</option>
-							<option value="7">7:00</option>
-							<option value="8">8:00</option>
-							<option value="9">9:00</option>
-							<option value="10">10:00</option>
-							<option value="11">11:00</option>
-							<option value="12">12:00</option>
-							<option value="13">13:00</option>
-							<option value="14">14:00</option>
-							<option value="15">15:00</option>
-							<option value="16">16:00</option>
-							<option value="17">17:00</option>
-							<option value="18">18:00</option>
-							<option value="19">19:00</option>
-							<option value="20">20:00</option>
-							<option value="21">21:00</option>
-							<option value="22">22:00</option>
-							<option value="23">23:00</option>
-						</select>
-						<div class="place-full-info__subtitle">до</div>
-						<input type="date" name="date-to">
-						<select name="time-to">
-							<option value="0">0:00</option>
-							<option value="1">1:00</option>
-							<option value="2">2:00</option>
-							<option value="3">3:00</option>
-							<option value="4">4:00</option>
-							<option value="5">5:00</option>
-							<option value="6">6:00</option>
-							<option value="7">7:00</option>
-							<option value="8">8:00</option>
-							<option value="9">9:00</option>
-							<option value="10">10:00</option>
-							<option value="11">11:00</option>
-							<option value="12">12:00</option>
-							<option value="13">13:00</option>
-							<option value="14">14:00</option>
-							<option value="15">15:00</option>
-							<option value="16">16:00</option>
-							<option value="17">17:00</option>
-							<option value="18">18:00</option>
-							<option value="19">19:00</option>
-							<option value="20">20:00</option>
-							<option value="21">21:00</option>
-							<option value="22">22:00</option>
-							<option value="23">23:00</option>
-						</select>
+				</div>
+				<div class="place-full-info">
+					<div class="place-full-info__body">
+						<button class="place-full-info__back-btn dn"><img src="img/back-btn.svg" alt=""></button>
+						<button class="place-full-info__close-btn"><img src="img/cross.svg" alt=""></button>
+						<div class="place-full-info__content active" data-content="info">
+							<div class="place-full-info__title">Название парковки</div>
+							<div class="place-full-info__address">ул. Лесная, дом 20</div>
+							<div class="place-full-info__rating"></div>
+							<div class="place-full-info__divider"></div>
+							<div class="place-full-info__subtitle">Тарифы</div>
+							<div class="place-full-info__text">Бесплатно первые 20 минут; далее 1300 ₽/час</div>
+							<div class="place-full-info__subtitle">Часы работы</div>
+							<div class="place-full-info__text">Пн-вт: 10:00 - 20:00</div>
+							<div class="place-full-info__text">Ср-вс: 05:00 - 23:00</div>
+							<div class="place-full-info__subtitle">Количество парковочных мест всего: <span>40</span></div>
+							<div class="place-full-info__subtitle">Количество свободных мест: <span>10</span></div>
+							<div class="place-full-info__divider"></div>
+							<div class="place-full-info__subtitle">Особенности</div>
+							<div class="place-full-info__tag">Наземная</div>
+							<div class="place-full-info__tag">Видеонаблюдение</div>
+							<div class="place-full-info__tag">Охраняемая</div>
+							<div class="place-full-info__tag">Общедоступная</div>
+							<div class="place-full-info__actions">
+								<button class="place-full-info__add-rating-btn btn"><img src="img/add-rating.svg" alt=""></button>
+								<button class="place-full-info__build-route-btn btn-ghost"><img src="img/build-route_colored.svg"
+										alt="">Построить маршрут</button>
+							</div>
+							<button class="place-full-info__arend-btn btn">Забронировать 1300 ₽/час</button>
+						</div>
+						<div class="place-full-info__content" data-content="datetime">
+							<div class="place-full-info__title">Название парковки</div>
+							<div class="place-full-info__subtitle">Выберете интервал бронирования</div>
+							<div class="place-full-info__subtitle">от</div>
+							<input type="date" name="date-from">
+							<select name="time-from">
+								<option value="0">0:00</option>
+								<option value="1">1:00</option>
+								<option value="2">2:00</option>
+								<option value="3">3:00</option>
+								<option value="4">4:00</option>
+								<option value="5">5:00</option>
+								<option value="6">6:00</option>
+								<option value="7">7:00</option>
+								<option value="8">8:00</option>
+								<option value="9">9:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
+							</select>
+							<div class="place-full-info__subtitle">до</div>
+							<input type="date" name="date-to">
+							<select name="time-to">
+								<option value="0">0:00</option>
+								<option value="1">1:00</option>
+								<option value="2">2:00</option>
+								<option value="3">3:00</option>
+								<option value="4">4:00</option>
+								<option value="5">5:00</option>
+								<option value="6">6:00</option>
+								<option value="7">7:00</option>
+								<option value="8">8:00</option>
+								<option value="9">9:00</option>
+								<option value="10">10:00</option>
+								<option value="11">11:00</option>
+								<option value="12">12:00</option>
+								<option value="13">13:00</option>
+								<option value="14">14:00</option>
+								<option value="15">15:00</option>
+								<option value="16">16:00</option>
+								<option value="17">17:00</option>
+								<option value="18">18:00</option>
+								<option value="19">19:00</option>
+								<option value="20">20:00</option>
+								<option value="21">21:00</option>
+								<option value="22">22:00</option>
+								<option value="23">23:00</option>
+							</select>
 
-						<button class="place-full-info__tomarkup-btn btn">Выбрать место</button>
+							<button class="place-full-info__tomarkup-btn btn">Выбрать место</button>
+						</div>
+						<div class="place-full-info__content" data-content="markup">
+							<div class="place-full-info__title">Название парковки</div>
+							<div class="place-full-info__labels">
+								<div class="place-full-info-label">
+									<div class="place-full-info-label__color close"></div>
+									<div class="place-full-info-label__text">Занято</div>
+								</div>
+								<div class="place-full-info-label">
+									<div class="place-full-info-label__color free"></div>
+									<div class="place-full-info-label__text">Свободно</div>
+								</div>
+								<div class="place-full-info-label">
+									<div class="place-full-info-label__color invalid"></div>
+									<div class="place-full-info-label__text">Место для инвалидов</div>
+								</div>
+							</div>
+							<div class="place-full-info-markup">
+								<div class="place-full-info-markup__grid">
+									<div class="place-full-info-markup__spot">1</div>
+									<div class="place-full-info-markup__spot">2</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">3</div>
+									<div class="place-full-info-markup__spot">4</div>
+									<div class="place-full-info-markup__spot">5</div>
+									<div class="place-full-info-markup__spot">6</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">7</div>
+									<div class="place-full-info-markup__spot">8</div>
+									<div class="place-full-info-markup__spot">9</div>
+									<div class="place-full-info-markup__spot">10</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">11</div>
+									<div class="place-full-info-markup__spot">12</div>
+									<div class="place-full-info-markup__spot">13</div>
+									<div class="place-full-info-markup__spot">14</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">15</div>
+									<div class="place-full-info-markup__spot">16</div>
+									<div class="place-full-info-markup__spot">17</div>
+									<div class="place-full-info-markup__spot">18</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">19</div>
+									<div class="place-full-info-markup__spot">20</div>
+								</div>
+								<div class="place-full-info-markup__flow">
+									<img src="img/road-markup.svg" alt="">
+									<img src="img/road-markup.svg" alt="">
+									<img src="img/road-markup.svg" alt="">
+								</div>
+								<div class="place-full-info-markup__grid">
+									<div class="place-full-info-markup__spot">21</div>
+									<div class="place-full-info-markup__spot">22</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">23</div>
+									<div class="place-full-info-markup__spot">24</div>
+									<div class="place-full-info-markup__spot">25</div>
+									<div class="place-full-info-markup__spot">26</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">27</div>
+									<div class="place-full-info-markup__spot">28</div>
+									<div class="place-full-info-markup__spot">29</div>
+									<div class="place-full-info-markup__spot">30</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">31</div>
+									<div class="place-full-info-markup__spot">32</div>
+									<div class="place-full-info-markup__spot">33</div>
+									<div class="place-full-info-markup__spot">34</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">35</div>
+									<div class="place-full-info-markup__spot">36</div>
+									<div class="place-full-info-markup__spot">37</div>
+									<div class="place-full-info-markup__spot">38</div>
+									<div></div>
+									<div class="place-full-info-markup__spot">39</div>
+									<div class="place-full-info-markup__spot">40</div>
+								</div>
+							</div>
+							<button class="place-full-info__tosummary-btn btn">Далее</button>
+						</div>
+						<div class="place-full-info__content" data-content="summary">
+							<div class="place-full-info__title">Название парковки</div>
+							<div class="place-full-info__subtitle">Место: <span class="choced-spot"></span></div>
+							<div class="place-full-info__subtitle">Время бронирования</div>
+							<div class="place-full-info-symmary-time">
+								<div class="place-full-info__text"></div>
+								<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
+										class="datetime-from">Вс, 26 ноября, 6:00</span></div>
+								<div class="place-full-info__text"></div>
+								<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
+										class="datetime-to">Вс, 26 ноября, 8:00</span></div>
+							</div>
+							<button class="place-full-info__to-pay-btn btn">Перейти к оплате</button>
+						</div>
+						<div class="place-full-info__content" data-content="pay">
+							<div class="place-full-info__title">Название парковки</div>
+							<div class="place-full-info__subtitle">Время на парковке <span class="count-hours-arend">2</span>часов
+							</div>
+							<div class="place-full-info__subtitle">Итого к оплате: <span>3900₽</span></div>
+							<div class="place-full-info__subtitle">Способы оплаты</div>
+							<div class="place-full-info__pay-list">
+								<div class="place-full-info-pay-item">
+									<img src="img/master.svg" alt="" class="place-full-info-pay-item__image">
+									<div class="place-full-info-pay-item__text">MasterCARD ....7892</div>
+								</div>
+								<div class="place-full-info-pay-item">
+									<img src="img/add.svg" alt="" class="place-full-info-pay-item__image">
+									<div class="place-full-info-pay-item__text">Добавить способ оплаты</div>
+								</div>
+							</div>
+							<button class="place-full-info__to-finish-btn btn">Оплатить</button>
+						</div>
+						<div class="place-full-info__content" data-content="finish">
+							<div class="place-full-info__title">Успешное бронирование</div>
+							<div class="place-full-info__text">Название парковки</div>
+							<div class="place-full-info__address place-full-info__text">ул. Лесная, дом 20</div>
+							<div class="place-full-info__text">Парковочное место: <span class="choced-spot"></span></div>
+							<div class="place-full-info-symmary-time">
+								<div class="place-full-info__text"></div>
+								<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
+										class="datetime-from">Вс, 26 ноября, 6:00</span></div>
+								<div class="place-full-info__text"></div>
+								<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
+										class="datetime-to">Вс, 26 ноября, 8:00</span></div>
+							</div>
+							<button class="place-full-info__share-btn btn">Поделиться</button>
+							<button class="place-full-info__to-main-btn btn-ghost">На Главную</button>
+						</div>
 					</div>
-					<div class="place-full-info__content" data-content="markup">
-						<div class="place-full-info__title">Название парковки</div>
-						<div class="place-full-info__labels">
-							<div class="place-full-info-label">
-								<div class="place-full-info-label__color close"></div>
-								<div class="place-full-info-label__text">Занято</div>
-							</div>
-							<div class="place-full-info-label">
-								<div class="place-full-info-label__color free"></div>
-								<div class="place-full-info-label__text">Свободно</div>
-							</div>
-							<div class="place-full-info-label">
-								<div class="place-full-info-label__color invalid"></div>
-								<div class="place-full-info-label__text">Место для инвалидов</div>
-							</div>
-						</div>
-						<div class="place-full-info-markup">
-							<div class="place-full-info-markup__grid">
-								<div class="place-full-info-markup__spot">1</div>
-								<div class="place-full-info-markup__spot">2</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">3</div>
-								<div class="place-full-info-markup__spot">4</div>
-								<div class="place-full-info-markup__spot">5</div>
-								<div class="place-full-info-markup__spot">6</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">7</div>
-								<div class="place-full-info-markup__spot">8</div>
-								<div class="place-full-info-markup__spot">9</div>
-								<div class="place-full-info-markup__spot">10</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">11</div>
-								<div class="place-full-info-markup__spot">12</div>
-								<div class="place-full-info-markup__spot">13</div>
-								<div class="place-full-info-markup__spot">14</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">15</div>
-								<div class="place-full-info-markup__spot">16</div>
-								<div class="place-full-info-markup__spot">17</div>
-								<div class="place-full-info-markup__spot">18</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">19</div>
-								<div class="place-full-info-markup__spot">20</div>
-							</div>
-							<div class="place-full-info-markup__flow">
-								<img src="img/road-markup.svg" alt="">
-								<img src="img/road-markup.svg" alt="">
-								<img src="img/road-markup.svg" alt="">
-							</div>
-							<div class="place-full-info-markup__grid">
-								<div class="place-full-info-markup__spot">21</div>
-								<div class="place-full-info-markup__spot">22</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">23</div>
-								<div class="place-full-info-markup__spot">24</div>
-								<div class="place-full-info-markup__spot">25</div>
-								<div class="place-full-info-markup__spot">26</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">27</div>
-								<div class="place-full-info-markup__spot">28</div>
-								<div class="place-full-info-markup__spot">29</div>
-								<div class="place-full-info-markup__spot">30</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">31</div>
-								<div class="place-full-info-markup__spot">32</div>
-								<div class="place-full-info-markup__spot">33</div>
-								<div class="place-full-info-markup__spot">34</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">35</div>
-								<div class="place-full-info-markup__spot">36</div>
-								<div class="place-full-info-markup__spot">37</div>
-								<div class="place-full-info-markup__spot">38</div>
-								<div></div>
-								<div class="place-full-info-markup__spot">39</div>
-								<div class="place-full-info-markup__spot">40</div>
-							</div>
-						</div>
-						<button class="place-full-info__tosummary-btn btn">Далее</button>
-					</div>
-					<div class="place-full-info__content" data-content="summary">
-						<div class="place-full-info__title">Название парковки</div>
-						<div class="place-full-info__subtitle">Место: <span class="choced-spot"></span></div>
-						<div class="place-full-info__subtitle">Время бронирования</div>
-						<div class="place-full-info-symmary-time">
-							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
-									class="datetime-from">Вс, 26 ноября, 6:00</span></div>
-							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
-									class="datetime-to">Вс, 26 ноября, 8:00</span></div>
-						</div>
-						<button class="place-full-info__to-pay-btn btn">Перейти к оплате</button>
-					</div>
-					<div class="place-full-info__content" data-content="pay">
-						<div class="place-full-info__title">Название парковки</div>
-						<div class="place-full-info__subtitle">Время на парковке <span class="count-hours-arend">2</span>часов</div>
-						<div class="place-full-info__subtitle">Итого к оплате: <span>3900₽</span></div>
-						<div class="place-full-info__subtitle">Способы оплаты</div>
-						<div class="place-full-info__pay-list">
-							<div class="place-full-info-pay-item">
-								<img src="img/master.svg" alt="" class="place-full-info-pay-item__image">
-								<div class="place-full-info-pay-item__text">MasterCARD ....7892</div>
-							</div>
-							<div class="place-full-info-pay-item">
-								<img src="img/add.svg" alt="" class="place-full-info-pay-item__image">
-								<div class="place-full-info-pay-item__text">Добавить способ оплаты</div>
-							</div>
-						</div>
-						<button class="place-full-info__to-finish-btn btn">Оплатить</button>
-					</div>
-					<div class="place-full-info__content" data-content="finish">
-						<div class="place-full-info__title">Успешное бронирование</div>
-						<div class="place-full-info__text">Название парковки</div>
-						<div class="place-full-info__address place-full-info__text">ул. Лесная, дом 20</div>
-						<div class="place-full-info__text">Парковочное место: <span class="choced-spot"></span></div>
-						<div class="place-full-info-symmary-time">
-							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__start"><span class="place-full-info__text">Начало</span> <span
-									class="datetime-from">Вс, 26 ноября, 6:00</span></div>
-							<div class="place-full-info__text"></div>
-							<div class="place-full-info-symmary-time__end"><span class="place-full-info__text">Выезд</span> <span
-									class="datetime-to">Вс, 26 ноября, 8:00</span></div>
-						</div>
-						<button class="place-full-info__share-btn btn">Поделиться</button>
-						<button class="place-full-info__to-main-btn btn-ghost">На Главную</button>
+					<div class="place-full-info__image"><img src="img/park-temp.png" alt=""></div>
+				</div>
+				<button class="app-body__location btn"><img src="img/location.svg" alt=""></button>
+			</div>
+			<div class="app-page profile-page page-temp">
+				<div class="page-temp__header">
+					<div class="page-temp__header-nav">
+						<div></div>
+						<div class="page-temp__title">Профиль</div>
+						<button class="exit-btn page-temp__header-btn">Выйти</button>
 					</div>
 				</div>
-				<div class="place-full-info__image"><img src="img/park-temp.png" alt=""></div>
+				<div class="page-temp__content">
+
+				</div>
 			</div>
-			<button class="app-body__location btn"><img src="img/location.svg" alt=""></button>
 		</div>
 		<div class="app-nav">
-			<button class="app-nav__btn"><img src="img/params.svg" alt=""><img src="img/params.svg" alt=""></button>
-			<button class="app-nav__btn active"><img src="img/geo-mark.svg" alt=""><img src="img/geo-mark__active.svg"
+			<!-- <button class="app-nav__btn"><img src="img/params.svg" alt=""><img src="img/params.svg" alt=""></button> -->
+			<button class="app-nav__btn to-map-btn active"><img src="img/geo-mark.svg" alt=""><img src="img/geo-mark__active.svg"
 					alt=""></button>
-			<button class="app-nav__btn"><img src="img/profile.svg" alt=""><img src="img/profile_active.svg" alt=""></button>
+			<button class="app-nav__btn to-profile-btn"><img src="img/profile.svg" alt=""><img src="img/profile_active.svg" alt=""></button>
 		</div>
 		<search role="search" class="app-search">
 			<img src="img/search.svg" alt="">
 			<input type="search" name="search" placeholder="Найти по адресу или названию">
 		</search>
-		<div class="rating">
-			<div class="rating__header">
-				<button class="rating__back-btn">Назад</button>
-				<div class="rating__title">Отзывы</div>
-				<div></div>
+		<div class="rating page-temp">
+			<div class="rating__header page-temp__header">
+				<div class="page-temp__header-nav">
+					<button class="rating__back-btn page-temp__header-btn">Назад</button>
+					<div class="rating__title page-temp__title">Отзывы</div>
+					<div></div>
+				</div>
 			</div>
-			<div class="rating__wrapper">
+			<div class="rating__wrapper page-temp__content">
 				<div class="rating__content" data-content="read">
 					<div class="rating__sort-list">
 						<div class="rating-sort-item">
@@ -393,6 +410,10 @@
 				</div>
 			</div>
 			<button class="rating__submit-btn btn">Оставить отзыв</button>
+		</div>
+		<div class="app-notify">
+			<div class="app-notify__img"><img src="img/star.svg" alt=""></div>
+			<div class="app-notify__text">Спасибо за ваш отзыв. Это поможет другим пользователям определиться с выбором.</div>
 		</div>
 	</main>
 </body>
